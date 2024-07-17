@@ -1,0 +1,57 @@
+// erorr-alert
+$error-bg:rgb(129 29 40/15%);
+$error-color:#ef8d8dfa;
+$error-border:rgba(255,25,0,.322);
+// =====================================================================
+// success
+$success-bg:rgba(246, 238,9 ,0.127);
+$success-color:#7acf58d6;
+$success-border:rgba(0,225,0,.322);
+// =====================================================================
+// info
+$info-bg:rgb(100 108 255/8% );
+$info-color:#bcc0ff;
+$info-border:#646cff;
+// =====================================================================
+// waring
+$waring-bg:rgb(255 197 23/5% );
+$waring-color:#fcd255;
+$waring-border:rgba(255,213,0,.322);
+// =====================================================================
+@mixin chanegAlert($name,$border-color,$bg-color,$color){
+    .#{$name} {
+        margin-bottom: 1.5rem;
+        background: $bg-color;
+      border: dotted $border-color 0.3rem;
+      border-radius: .8rem;
+      padding: 1rem;
+      color: $color;
+      .header {
+        margin-bottom: 1.5rem;
+      
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .cloes-btn{
+            cursor: pointer;
+        }
+      }
+      .titel {
+      display: flex;
+       
+        font-size: 1.3rem;
+        align-items: center;
+        justify-content: center;
+       span{
+        padding-right:.5rem ;
+        cursor: pointer;
+       }
+       
+      }
+    }
+
+}
+@include chanegAlert("alert-wrong",$error-border,$error-bg,$error-color);
+@include chanegAlert("alert-success",$success-border,$success-bg,$success-color);
+@include chanegAlert("alert-info",$info-border,$info-bg,$info-color);
+@include chanegAlert("alert-waring",$waring-border,$waring-bg,$waring-color);
